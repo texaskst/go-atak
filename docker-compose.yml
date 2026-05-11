@@ -19,6 +19,6 @@ services:
       - "8999:8999"
       - "8999:8999/udp"
     volumes:
-      - /home/alakida/goatak_data/cert:/app/cert
+      - /home/alakida/goatak_data/cert/files:/app/cert/files
       - /home/alakida/goatak_data/data:/app/data
       - ./goatak_server.yml:/app/goatak_server.yml
