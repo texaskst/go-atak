@@ -2,6 +2,9 @@ admin_addr: ":8088"
 api_addr: ":8443"
 cert_addr: ":8446"
 tls_addr: ":8089"
+data_dir: data
+db: data/db.sqlite
+users_file: data/users.yml
 ssl:
   marti: true
   enroll: true
