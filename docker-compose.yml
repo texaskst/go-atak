@@ -6,10 +6,7 @@ services:
       restart_policy:
         condition: any
     environment:
-      - SRV_HOST=assistant.lakida.me
-      - GOATAK_SSL_MARTI=false
-      - GOATAK_SSL_ENROLL=false
-      - GOATAK_TLS_ADDR=
+      - SRV_HOST=adibi.lakida.me
     ports:
       - "8080:8080"
       - "8443:8443"
