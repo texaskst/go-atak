@@ -1,19 +1,20 @@
 services:
   goatak:
     image: ghcr.io/kdudkov/goatak_server:latest
-    restart: always
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
     environment:
-      - SRV_HOST
+      - SRV_HOST=assistant.lakida.me
     ports:
-      - 8080:8080
-      - 8443:8443
-      - 8088:8088
-      - 8089:8089
-      - 8446:8446
-      - 8999:8999
+      - "8080:8080"
+      - "8443:8443"
+      - "8088:8088"
+      - "8089:8089"
+      - "8446:8446"
+      - "8999:8999"
+      - "8999:8999/udp"
     volumes:
       - ./cert:/app/cert/files
       - ./data:/app/data
-      - type: bind
-        source: ./users.yml
-        target: /app/users.yml
