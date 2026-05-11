@@ -7,6 +7,9 @@ services:
         condition: any
     environment:
       - SRV_HOST=assistant.lakida.me
+      - GOATAK_SSL_MARTI=false
+      - GOATAK_SSL_ENROLL=false
+      - GOATAK_TLS_ADDR=
     ports:
       - "8080:8080"
       - "8443:8443"
