@@ -12,10 +12,21 @@ services:
       - "8443:8443"
       - "8088:8088"
       - "8089:8089"
-      - "8446:8446"
       - "8999:8999"
       - "8999:8999/udp"
     volumes:
       - /home/alakida/goatak_data/cert/files:/app/cert/files
       - /home/alakida/goatak_data/data:/app/data
       - ./goatak_server.yml:/app/goatak_server.yml
+
+  enrollment-nginx:
+    image: nginx:1.27-alpine
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+    ports:
+      - "8446:8446"
+    volumes:
+      - ./nginx-goatak-enrollment.conf:/etc/nginx/conf.d/default.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
