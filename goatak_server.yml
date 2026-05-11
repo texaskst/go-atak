@@ -1,1 +1,8 @@
 admin_addr: ":8088"
+cert_addr: ":8446"
+ssl:
+  marti: true
+  enroll: true
+  ca: cert/files/ca.pem
+  cert: cert/files/server.pem
+  key: cert/files/server.key
