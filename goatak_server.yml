@@ -1,3 +1,4 @@
+admin_addr: ":8088"
 ssl:
   marti: false
   enroll: false
