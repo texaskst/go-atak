@@ -7,6 +7,7 @@ services:
         condition: any
     environment:
       - SRV_HOST=adibi.lakida.me
+      - TMPDIR=/app/data
     ports:
       - "8080:8080"
       - "8443:8443"
